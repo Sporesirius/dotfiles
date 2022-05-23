@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,7 +104,18 @@ fi
 eval "$(starship init zsh)"
 
 # Aliases
-alias vim="nvim"
-alias v="nvim"
-alias ls="exa"
+alias vim='nvim'
+alias v='nvim'
+alias ls='exa'
+alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
+alias ..='cd ..'
+alias cls='clear'
+alias kc='kubectl'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
